@@ -1,0 +1,482 @@
+/* Reset Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Custom Navbar */
+.custom-navbar {
+    width: 100%; /* Full width */
+    padding: 1rem; /* Inner spacing */
+    font-size: 1.2rem; /* Font size for links */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #f8f9fa; /* Background color */
+    margin: 0; /* Remove default margins */
+    border-bottom: 1px solid #ddd; /* Optional: Add a border for better visuals */
+}
+.custom-navbar .navbar-icons {
+  display: flex;
+  gap: 20px;
+  font-size: 1.5rem;
+  color: #333;
+}
+
+.custom-navbar .navbar-icons a {
+  text-decoration: none;
+  color: inherit;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.custom-navbar .navbar-icons a:hover {
+  color: #007bff; /* or your accent color */
+}
+
+/* Optional: notification badge */
+.custom-navbar .navbar-icons a .fa-bell::after {
+  content: "";
+  position: absolute;
+  top: 4px;
+  right: 2px;
+  width: 8px;
+  height: 8px;
+  background: red;
+  border-radius: 50%;
+  border: 1.5px solid white;
+}
+
+
+.brand-carousel {
+  overflow: hidden; /* Hide overflowing content */
+  width: 100%; /* Full width */
+  background-color: #f8f9fa; /* Optional: Background color */
+  padding: 20px 0; /* Optional: Padding for spacing */
+}
+
+.scrolling-wrapper {
+  display: flex; /* Arrange images in a row */
+  gap: 20px; /* Space between images */
+  animation: scroll 20s linear infinite; /* Slow, infinite scroll */
+}
+
+.scrolling-wrapper img {
+  height: 50px; /* Adjust logo height */
+  object-fit: contain; /* Preserve aspect ratio */
+  transition: transform 0.3s ease; /* Hover effect */
+}
+
+.scrolling-wrapper img:hover {
+  transform: scale(1.1); /* Slight zoom on hover */
+}
+
+/* Keyframes for continuous scroll */
+@keyframes scroll {
+  from {
+    transform: translateX(0); /* Start from the initial position */
+  }
+  to {
+    transform: translateX(-50%); /* Move left by half the total width */
+  }
+}
+
+
+
+    .card-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around; /* Ensures proper spacing between cards */
+        padding: 0 20px; /* Padding on left and right */
+        gap: 15px; /* Gap between cards */
+        margin-top: 20px; /* Space above the cards */
+    }
+
+
+.card {
+    flex: 1 1 calc(25% - 20px);
+    max-width: calc(25% - 20px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: scale(1.05); /* Slightly bigger */
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2); /* Bigger shadow for "pop" */
+    z-index: 10; /* Make sure hovered card is above others */
+
+}
+
+.saree-tagline {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem;
+    color: #6b3e26; /* Deep, warm brown for a classy touch */
+    font-weight: 600;
+    font-style: normal;
+    letter-spacing: 2px;
+    text-align: center;
+    margin: 25px 0;
+    text-transform: capitalize;
+    border-bottom: 2px solid #6b3e26; /* subtle underline for elegance */
+    padding-bottom: 8px;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+.announcement-carousel {
+    overflow: hidden; /* Hide overflowing content */
+    width: 100%; /* Full width */
+    background-color: #fff832d4; /* Light red background for emphasis */
+    padding: 10px 0; /* Padding for spacing */
+    border-top: 2px solid #ff5a5f; /* Top border */
+    border-bottom: 2px solid #ff5a5f; /* Bottom border */
+    position: relative; /* Ensures proper positioning */
+}
+
+.scrolling-announcement-wrapper {
+    display: flex; /* Arrange text in a row */
+    gap: 50px; /* Space between messages */
+    animation: scrollText 20s linear infinite; /* Slower continuous scroll animation */
+    white-space: nowrap; /* Prevent text wrapping */
+    will-change: transform; /* Improve animation performance */
+}
+
+.scrolling-announcement-wrapper p {
+    font-size: 1.2rem; /* Slightly larger font */
+    font-weight: bold; /* Make text stand out */
+    color: red; /* Announcement color */
+    text-transform: uppercase; /* Optional: Capitalize text */
+    margin: 0; /* Remove default margins */
+    position: relative; /* Allow positioning for bullet */
+    padding-left: 20px; /* Space for the bullet */
+}
+
+.scrolling-announcement-wrapper p::before {
+    content: "•"; /* Unicode for a bullet point */
+    position: absolute; /* Position it relative to the text */
+    left: 0; /* Place it to the left of the text */
+    color: red; /* Same color as text for consistency */
+    font-size: 1.5rem; /* Slightly larger bullet */
+    line-height: 1; /* Align bullet with text */
+}
+
+/* Keyframes for continuous scroll */
+@keyframes scrollText {
+    from {
+        transform: translateX(100%); /* Start from outside the screen */
+    }
+    to {
+        transform: translateX(-100%); /* Move completely off-screen */
+    }
+}
+
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.filter-section {
+    width: 20%; /* Sidebar width */
+    background-color: #cdc3d543;
+    border-right: 1px solid #ddd;
+    padding: 1rem;
+    font-size: 0.9rem;
+    color: #333;
+
+    /* Change font to a classy Google Font */
+     font-family: 'Playfair Display', serif !important;
+
+    /* Sticky positioning */
+    position: sticky;
+    top: 0; /* Sticks to the top when scrolling */
+    height: calc(100vh - 2rem); /* Full viewport height minus padding */
+    overflow-y: auto; /* Scroll within the sidebar if content overflows */
+}
+
+
+/* Common styles for each group */
+.filter-group {
+    margin-bottom: 1.5rem;
+}
+
+.filter-group h6 {
+    font-weight: bold;
+    margin-bottom: 0.8rem;
+    font-size: 1.1rem;
+}
+
+/* Category - horizontal list */
+.category ul {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    padding: 0;
+}
+
+.category li label {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+/* Gender - radio buttons with label on right */
+.gender ul {
+    list-style: none;
+    padding: 0;
+}
+
+.gender li {
+    margin-bottom: 0.5rem;
+}
+
+.gender li label {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.gender input[type="radio"] {
+    accent-color: #007bff; /* Blue radio buttons */
+}
+
+/* Colour - horizontal color swatches */
+.colour ul {
+    display: flex;
+    gap: 10px;
+    list-style: none;
+    padding: 0;
+}
+
+.color-swatch {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    display: inline-block;
+    transition: transform 0.2s ease;
+}
+
+.color-swatch:hover {
+    transform: scale(1.2);
+    border-color: #007bff;
+}
+
+/* Fabric - multiple options filling horizontal space then wrapping */
+.fabric ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    list-style: none;
+    padding: 0;
+}
+
+.fabric li {
+    flex: 1 1 40%; /* Each item takes about 40% width to allow 2 items per row */
+}
+
+.fabric li label {
+    cursor: pointer;
+    display: block;
+    padding: 4px 6px;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: background-color 0.3s, border-color 0.3s;
+    text-align: center;
+}
+
+.fabric li label:hover {
+    background-color: #007bff;
+    border-color: #0056b3;
+    color: #fff;
+}
+
+/* Size - horizontal with small gaps */
+.size ul {
+    display: flex;
+    gap: 10px;
+    list-style: none;
+    padding: 0;
+}
+
+.size li label {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 4px 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    user-select: none;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.size li label:hover {
+    background-color: #007bff;
+    border-color: #0056b3;
+    color: #fff;
+}
+
+.size input[type="checkbox"] {
+    accent-color: #007bff;
+}
+
+
+
+/* Product Cards Container */
+.product-cards-container {
+    width: 100%; /* Use full width of the container */
+    padding: 1rem; /* Padding for overall spacing */
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem; /* Equal gap between cards */
+    justify-content: space-between; /* Distribute cards evenly */
+    background-color: rgba(0, 191, 255, 0.332);
+    box-sizing: border-box; /* Ensures padding is included in width/height */
+}
+
+/* Product Card */
+.product-card {
+    flex: 1 1 calc(33.333% - 1rem); /* Ensure three cards per row with gap */
+    max-width: calc(33.333% - 1rem); /* Ensure consistent width */
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 0.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    position: relative; /* Enable absolute positioning inside */
+}
+
+/* Hover effect */
+.product-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
+}
+
+.product-card img {
+    width: 100%; /* Full width of the card */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: contain; /* Ensure the entire image is visible */
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 0.5rem;
+    max-height: 200px; /* Optional: Limit the maximum height */
+}
+
+
+/* Product details */
+.product-details p {
+    margin: 0.3rem 0;
+    font-size: 0.9rem;
+}
+/* Original price with strikethrough */
+.original-price {
+    text-decoration: line-through;
+    color: #888; /* Gray color to de-emphasize */
+    margin-right: 8px; /* Space between original and discounted price */
+}
+
+/* Discounted price with emphasis */
+.discounted-price {
+    color: #ff5a5f; /* Red to highlight the discount */
+    font-weight: bold;
+}
+
+
+
+.site-footer {
+  background-color: #222;
+  color: #ddd;
+  padding: 2rem 1rem 1rem;
+  font-family: Arial, sans-serif;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 2rem;
+}
+
+.footer-section {
+  flex: 1 1 250px;
+  min-width: 200px;
+}
+
+.footer-section h3,
+.footer-section h4 {
+  color: #fff;
+  margin-bottom: 1rem;
+}
+
+.footer-section p,
+.footer-section ul {
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 0.6rem;
+}
+
+.footer-section ul li a {
+  color: #bbb;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+  color: #007bff;
+}
+
+.footer-section.contact a {
+  color: #bbb;
+  text-decoration: none;
+}
+
+.footer-section.contact a:hover {
+  color: #007bff;
+}
+
+.social-icons {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.social-icon svg {
+  width: 28px;
+  height: 28px;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.social-icon:hover svg {
+  transform: scale(1.2);
+}
+
+.footer-bottom {
+  text-align: center;
+  border-top: 1px solid #444;
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  font-size: 0.85rem;
+  color: #666;
+}
